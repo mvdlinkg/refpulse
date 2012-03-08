@@ -1,0 +1,26 @@
+!!! 5
+%html
+  %head
+    %title= @title
+    - if @description
+      %meta{:name => "description", :content => @description}
+    %meta{:name => "keywords", :content => @metatags}
+    = csrf_meta_tag
+
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+
+    -# = remote_asset :javascript_include_tag, 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'
+    -# = remote_asset :javascript_include_tag, 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js'
+    -# = include_stylesheets :application
+    -# = include_javascripts :application
+
+    = yield(:head)
+
+  %body
+    = render :partial => 'shared/notifications'
+    = render :partial => 'shared/user_navigation'
+    .main
+      = yield
+
+    = yield(:bottom)

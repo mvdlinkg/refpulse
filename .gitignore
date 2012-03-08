@@ -16,5 +16,6 @@
 
 # Config files
 /config/database.yml
+/config/settings.yml
 
 /spec/support/mine.rb

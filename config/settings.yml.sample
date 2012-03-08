@@ -1,0 +1,21 @@
+defaults: &defaults
+  site:
+    name: Referee Pulse
+    email: info@refereepulse.com
+    metatags: "futbol, fútbol, footbal, soccer, manager, técnico"
+    description: "Football (soccer) Referee Watch"
+  pagination:
+    per_page: 10
+
+development:
+  <<: *defaults
+  site:
+    name: Referee Pulse DEV
+    email: info@local.com
+    metatags: "futbol, fútbol, footbal, soccer, manager, técnico"
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

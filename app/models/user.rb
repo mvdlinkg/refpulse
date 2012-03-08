@@ -9,8 +9,7 @@ class User < ActiveRecord::Base
           :validatable,
           :confirmable,
           :lockable,
-          :timeoutable,
-          :encryptable
+          :timeoutable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
