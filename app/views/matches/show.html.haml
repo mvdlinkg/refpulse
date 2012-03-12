@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Visitor:
+  = @match.visitor_id
+%p
+  %b Local:
+  = @match.local_id
+%p
+  %b Referee:
+  = @match.referee_id
+%p
+  %b Stadium:
+  = @match.stadium
+%p
+  %b Date:
+  = @match.date
+
+= link_to 'Edit', edit_match_path(@match)
+\|
+= link_to 'Back', matches_path

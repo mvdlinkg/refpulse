@@ -1,0 +1,27 @@
+%h1 Listing referees
+
+%table
+  %tr
+    %th Name
+    %th Age
+    %th Nationality
+    %th Rate
+    %th Trend
+    %th
+    %th
+    %th
+
+  - @referees.each do |referee|
+    %tr
+      %td= referee.name
+      %td= referee.age
+      %td= referee.nationality
+      %td= referee.rate
+      %td= referee.trend
+      %td= link_to 'Show', referee
+      %td= link_to 'Edit', edit_referee_path(referee)
+      %td= link_to 'Destroy', referee, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Referee', new_referee_path

@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Match:
+  = @match_stat.match_id
+%p
+  %b Foullocal:
+  = @match_stat.foulLocal
+%p
+  %b Foulvisitor:
+  = @match_stat.foulVisitor
+%p
+  %b Offsidelocal:
+  = @match_stat.offsideLocal
+%p
+  %b Offsidevisitor:
+  = @match_stat.offsideVisitor
+%p
+  %b Yellowlocal:
+  = @match_stat.yellowLocal
+%p
+  %b Yellowvisitor:
+  = @match_stat.yellowVisitor
+%p
+  %b Redlocal:
+  = @match_stat.redLocal
+%p
+  %b Redvisitor:
+  = @match_stat.redVisitor
+%p
+  %b Penaltiesvisitor:
+  = @match_stat.penaltiesVisitor
+%p
+  %b Penaltieslocal:
+  = @match_stat.penaltiesLocal
+
+= link_to 'Edit', edit_match_stat_path(@match_stat)
+\|
+= link_to 'Back', match_stats_path
