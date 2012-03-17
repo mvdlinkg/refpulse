@@ -1,0 +1,18 @@
+%head
+  %title= @title
+  - if @description
+    %meta{:name => "description", :content => @description}
+  %meta{:name => "keywords", :content => @metatags}
+  = yield :head
+  = stylesheet_link_tag 'global'
+  = render :partial => 'shared/js_globals'
+  = render :partial => 'shared/no_jquery_effects' if Rails.env.test?
+  = javascript_include_tag 'application'
+  = yield(:javascripts)
+  /[if lte IE 8]
+    = javascript_include_tag 'html5'
+
+  - if Rails.env.production?
+    -# = javascript_include_tag '//s3.amazonaws.com/ki.js/25814/55V.js', :async => true
+    -# = javascript_include_tag "//platform.twitter.com/widgets.js"
+  = csrf_meta_tag

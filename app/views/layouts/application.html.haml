@@ -1,5 +1,6 @@
 !!! 5
 %html
+  = render :partial => 'layouts/head'
   %head
     %title= @title
     - if @description
@@ -20,7 +21,11 @@
   %body
     = render :partial => 'shared/notifications'
     = render :partial => 'shared/user_navigation'
+
+    -# - if admin_signed_in?
+    -#   = render :partial => "layouts/shared/admin_actions"
     .main
       = yield
 
     = yield(:bottom)
+
