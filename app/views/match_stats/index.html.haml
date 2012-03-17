@@ -1,0 +1,39 @@
+%h1 Listing match_stats
+
+%table
+  %tr
+    %th Match
+    %th Foullocal
+    %th Foulvisitor
+    %th Offsidelocal
+    %th Offsidevisitor
+    %th Yellowlocal
+    %th Yellowvisitor
+    %th Redlocal
+    %th Redvisitor
+    %th Penaltiesvisitor
+    %th Penaltieslocal
+    %th
+    %th
+    %th
+
+  - @match_stats.each do |match_stat|
+    %tr
+      %td= match_stat.match_id
+      %td= match_stat.foulLocal
+      %td= match_stat.foulVisitor
+      %td= match_stat.offsideLocal
+      %td= match_stat.offsideVisitor
+      %td= match_stat.yellowLocal
+      %td= match_stat.yellowVisitor
+      %td= match_stat.redLocal
+      %td= match_stat.redVisitor
+      %td= match_stat.penaltiesVisitor
+      %td= match_stat.penaltiesLocal
+      %td= link_to 'Show', match_stat
+      %td= link_to 'Edit', edit_match_stat_path(match_stat)
+      %td= link_to 'Destroy', match_stat, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Match stat', new_match_stat_path

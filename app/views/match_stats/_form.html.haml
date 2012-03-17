@@ -1,0 +1,43 @@
+= form_for @match_stat do |f|
+  -if @match_stat.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@match_stat.errors.count, "error")} prohibited this match_stat from being saved:"
+      %ul
+        - @match_stat.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :match_id
+    = f.number_field :match_id
+  .field
+    = f.label :foulLocal
+    = f.number_field :foulLocal
+  .field
+    = f.label :foulVisitor
+    = f.number_field :foulVisitor
+  .field
+    = f.label :offsideLocal
+    = f.number_field :offsideLocal
+  .field
+    = f.label :offsideVisitor
+    = f.number_field :offsideVisitor
+  .field
+    = f.label :yellowLocal
+    = f.number_field :yellowLocal
+  .field
+    = f.label :yellowVisitor
+    = f.number_field :yellowVisitor
+  .field
+    = f.label :redLocal
+    = f.number_field :redLocal
+  .field
+    = f.label :redVisitor
+    = f.number_field :redVisitor
+  .field
+    = f.label :penaltiesVisitor
+    = f.number_field :penaltiesVisitor
+  .field
+    = f.label :penaltiesLocal
+    = f.number_field :penaltiesLocal
+  .actions
+    = f.submit 'Save'

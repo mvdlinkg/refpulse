@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Referee:
+  = @vote.referee_id
+%p
+  %b Match:
+  = @vote.match_id
+%p
+  %b User:
+  = @vote.user_id
+%p
+  %b Comment:
+  = @vote.comment
+%p
+  %b Rate:
+  = @vote.rate
+
+= link_to 'Edit', edit_vote_path(@vote)
+\|
+= link_to 'Back', votes_path

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @referee.name
+%p
+  %b Age:
+  = @referee.age
+%p
+  %b Nationality:
+  = @referee.nationality
+%p
+  %b Rate:
+  = @referee.rate
+%p
+  %b Trend:
+  = @referee.trend
+
+= link_to 'Edit', edit_referee_path(@referee)
+\|
+= link_to 'Back', referees_path
